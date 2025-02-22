@@ -1,32 +1,38 @@
 import Link from "next/link";
-import { TransitionLink } from "../utils/TransitionLink";
+
 
 export const FlipNav = () => {
   return (
-    <nav className="p-4 flex items-center justify-between relative">
-      <NavLeft />
-    </nav>
+    <NavLeft />
   );
 };
 
 const NavLeft = () => {
   return (
-    <div className="flex items-center gap-6">
-      <Link href="/">
-        <Logo />
-      </Link>
-      <TransitionLink href="/banking">Banking</TransitionLink>
-      <TransitionLink href="/energy">Energy</TransitionLink>
-      <TransitionLink href="/insurance">Insurance</TransitionLink>
-      <TransitionLink href="/sanitation">Sanitation</TransitionLink>
-      <TransitionLink href="/about">About</TransitionLink>
-    </div>
+  <nav>
+    <header className="flex justify-between items-center p-6 shadow-md">
+    <Logo />
+    <nav className="space-x-6">
+    <Link href="/banking" className="text-gray-700 hover:text-blue-600">Banking</Link>
+    <Link href="/energy" className="text-gray-700 hover:text-blue-600">Energy</Link>
+    <Link href="/insurance" className="text-gray-700 hover:text-blue-600">Insurance</Link>
+    <Link href="/sanitation" className="text-gray-700 hover:text-blue-600">Sanitation</Link>
+    <Link href="/about" className="text-gray-700 hover:text-blue-600">About</Link>
+    </nav>
+    <Link href="#" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Try Free</Link>
+  </header>
+</nav>
   );
 };
+
 const Logo = () => {
   return (
-    <div className="text-2xl font-bold text-gray-800">
-      Stock-Mind
+    <div >
+      <Link href="/">
+      <h1 className="text-2xl font-bold">Stock-Mind</h1>
+      </Link>
+       
     </div>
   );
 };
+
